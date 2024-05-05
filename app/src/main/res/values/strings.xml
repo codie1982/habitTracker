@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">habbitTrackerTest01</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="monday">pzt</string>
+    <string name="tuesday">sal</string>
+    <string name="wednesday">çar</string>
+    <string name="thursday">per</string>
+    <string name="friday">cum</string>
+    <string name="saturday">cmt</string>
+    <string name="sunday">pzr</string>
+    <string name="today">BUGÜN</string>
+    <string name="date">5 may</string>
+</resources>
