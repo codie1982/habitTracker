@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.adapter.HabitListAdapter;
 import com.grnt.habbittrackertest01.adapter.RcTimeTravelsAdapter;
-import com.grnt.habbittrackertest01.data.HabitDao;
 
 
 public class MainFragment extends Fragment {
