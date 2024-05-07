@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.adapter.HabitListAdapter;
 import com.grnt.habbittrackertest01.adapter.RcTimeTravelsAdapter;
+import com.grnt.habbittrackertest01.data.HabitDao;
 
 
 public class MainFragment extends Fragment {
@@ -32,8 +33,10 @@ RecyclerView rcTimeTravels,rchbtlist;
         rchbtlist = view.findViewById(R.id.rc_habit_list);
         initRCTT();//Zaman aralıkları için gereken liste
         initHabitList();
+
         return view;
     }
+
 
     private void initRCTT() {
         RcTimeTravelsAdapter adapter = new RcTimeTravelsAdapter();

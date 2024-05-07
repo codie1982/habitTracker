@@ -12,7 +12,11 @@ import androidx.fragment.app.FragmentContainer;
 
 import com.grnt.habbittrackertest01.BaseActivity;
 import com.grnt.habbittrackertest01.R;
+import com.grnt.habbittrackertest01.data.HabitDao;
+import com.grnt.habbittrackertest01.data.HabitData;
 import com.grnt.habbittrackertest01.view.fragment.MainFragment;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
@@ -33,5 +37,8 @@ public class MainActivity extends BaseActivity {
                     .add(R.id.fragmentContainerView, MainFragment.class, null)
                     .commit();
         }
+
+        HabitDao habitDao = db.habitDao();
+        List<HabitData> dt =  habitDao.getAll();
     }
 }
