@@ -7,6 +7,6 @@ import java.util.List;
 
 @Dao
 public interface HabitDao {
-    @Query("SELECT * FROM habit_tracker")
+    @Query("SELECT * FROM habit")
     List<HabitData> getAll();
 }
