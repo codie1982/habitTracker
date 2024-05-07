@@ -8,11 +8,9 @@ import androidx.room.PrimaryKey;
 public class HabitData {
 
     @PrimaryKey(autoGenerate = true)
-    private int uid;
+    public int uid;
     @ColumnInfo(name = "name")
     private String name;
-
-
 
     @ColumnInfo(name = "description")
     private String description;

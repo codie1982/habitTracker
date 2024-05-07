@@ -7,7 +7,7 @@
     tools:context=".view.fragment.MainFragment">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAddHabit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -23,7 +23,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddHabit"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -220,15 +220,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        tools:itemCount="1"
+        itemAnimator="androidx.recyclerview.widget.DefaultItemAnimator"
         tools:listitem="@layout/rc_time_intervals_item"
         app:layout_constraintTop_toBottomOf="@+id/lnrCalenderSection"
         tools:layout_editor_absoluteX="1dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_habit_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        tools:listitem="@layout/rc_time_intervals_item"
-        app:layout_constraintTop_toBottomOf="@+id/lnrCalenderSection"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rc_time_intervals"
+        tools:listitem="@layout/rc_habit_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

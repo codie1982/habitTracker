@@ -16,7 +16,7 @@ public class BaseActivity  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         db = Room.databaseBuilder(getApplicationContext(),
-                HabitDatabase.class, "habit-traker-db").build();
+                HabitDatabase.class, "habit-traker-db").allowMainThreadQueries().build();
     }
 
 

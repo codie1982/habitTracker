@@ -36,6 +36,6 @@ public class MainActivity extends BaseActivity {
         }
 
         HabitDao habitDao = db.habitDao();
-        List<HabitData> dt =  habitDao.getAll();
+        //List<HabitData> dt =  habitDao.getAll();
     }
 }
