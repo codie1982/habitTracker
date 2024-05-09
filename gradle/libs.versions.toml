@@ -1,17 +1,20 @@
 [versions]
 agp = "8.4.0"
+hiltAndroid = "2.44"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
-material = "1.11.0"
+material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
 navigationFragment = "2.7.7"
 navigationUi = "2.7.7"
 room_version="2.6.1"
+nav_plugin_id="2.7.7"
 
 [libraries]
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -28,3 +31,6 @@ room-processor = {group="androidx.room",name="room-compiler",version.ref="room_v
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-room = { id = "androidx.room", version.ref = "room_version" }
+
+android-navigation = { id = "androidx.navigation.safeargs", version.ref = "nav_plugin_id" }
+

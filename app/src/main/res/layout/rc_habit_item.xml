@@ -24,6 +24,7 @@
             />
 
         <TextView
+            android:id="@+id/txtHabitName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="8 Bardak Su için"

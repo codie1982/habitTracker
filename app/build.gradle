@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.android.room)
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -38,11 +39,14 @@ dependencies {
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
-    implementation libs.navigation.fragment
-    implementation libs.navigation.ui
+
     /*Room*/
     implementation libs.room.db
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
     annotationProcessor libs.room.processor
+
+    implementation libs.hilt.android
 
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit

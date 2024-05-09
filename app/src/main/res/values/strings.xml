@@ -10,4 +10,11 @@
     <string name="sunday">pzr</string>
     <string name="today">BUGÜN</string>
     <string name="date">5 may</string>
+
+
+    <string name="make_new_habit_text">Yeni Bir Alışkanlık Oluştur</string>
+    <string name="regular">Düzenli</string>
+    <string name="negative">Olumsuz</string>
+    <string name="one">Tek</string>
+    <string name="sava_habit">Alışkanlığı Kaydet</string>
 </resources>

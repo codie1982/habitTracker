@@ -1,6 +1,8 @@
 package com.grnt.habbittrackertest01.data;
 
 import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.List;
@@ -9,4 +11,7 @@ import java.util.List;
 public interface HabitDao {
     @Query("SELECT * FROM habit")
     List<HabitData> getAll();
+
+    @Insert
+    void insertNewHabit(HabitData data);
 }

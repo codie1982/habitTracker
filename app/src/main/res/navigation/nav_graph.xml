@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.grnt.habbittrackertest01.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_habitListFragment"
+            app:destination="@id/habitListFragment"
+            app:popUpTo="@navigation/nav_graph"/>
+    </fragment>
+    <fragment
+        android:id="@+id/habitListFragment"
+        android:name="com.grnt.habbittrackertest01.HabitListFragment"
+        android:label="fragment_habit_list"
+        tools:layout="@layout/fragment_habit_list" >
+        <action
+            android:id="@+id/action_habitListFragment_to_makeHabitFragment"
+            app:destination="@id/makeHabitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeHabitFragment"
+        android:name="com.grnt.habbittrackertest01.MakeHabitFragment"
+        android:label="fragment_make_habit"
+        tools:layout="@layout/fragment_make_habit" >
+        <action
+            android:id="@+id/action_makeHabitFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_makeHabitFragment_to_habitListFragment"
+            app:destination="@id/habitListFragment" />
+        <action
+            android:id="@+id/action_makeHabitFragment_to_habitDaysFragment"
+            app:destination="@id/habitDaysFragment" />
+        <action
+            android:id="@+id/action_makeHabitFragment_to_habitTargetFragment"
+            app:destination="@id/habitTargetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/habitDaysFragment"
+        android:name="com.grnt.habbittrackertest01.HabitDaysFragment"
+        android:label="fragment_habit_days"
+        tools:layout="@layout/fragment_habit_days" >
+        <action
+            android:id="@+id/action_habitDaysFragment_to_makeHabitFragment"
+            app:destination="@id/makeHabitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/habitTargetFragment"
+        android:name="com.grnt.habbittrackertest01.HabitTargetFragment"
+        android:label="fragment_habit_target"
+        tools:layout="@layout/fragment_habit_target" >
+        <action
+            android:id="@+id/action_habitTargetFragment_to_makeHabitFragment"
+            app:destination="@id/makeHabitFragment" />
+    </fragment>
+</navigation>
