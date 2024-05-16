@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HabitListFragment">
+    tools:context=".view.fragment.HabitListFragment">
 
 
     <Button
@@ -17,37 +17,14 @@
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/btnMakeNewHabit" />
 
-        <Button
-            android:id="@+id/btnOneShotHabit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/one" />
-
-        <Button
-            android:id="@+id/btnnegativeHabit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/negative" />
-
-        <Button
-            android:id="@+id/btnRegulareHabit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/regular" />
-    </LinearLayout>
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -63,5 +40,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="24dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

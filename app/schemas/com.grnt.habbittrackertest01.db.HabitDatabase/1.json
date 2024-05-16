@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "0888c9114a1d030e5b574a12a8dfd641",
+    "identityHash": "ed44f1b6517f3e229b918837f5e59b49",
     "entities": [
       {
         "tableName": "habit",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `description` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `description` TEXT, `habit_type` INTEGER, `habit_color` TEXT, `date_created` INTEGER, `date_updated` INTEGER, `date_completed` INTEGER, `deleted` INTEGER, `date_deleted` INTEGER)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -25,6 +25,48 @@
             "columnName": "description",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "habitType",
+            "columnName": "habit_type",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "habitColor",
+            "columnName": "habit_color",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateCreated",
+            "columnName": "date_created",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateUpdated",
+            "columnName": "date_updated",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateCompleted",
+            "columnName": "date_completed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "deleted",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateDeleted",
+            "columnName": "date_deleted",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -40,7 +82,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0888c9114a1d030e5b574a12a8dfd641')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ed44f1b6517f3e229b918837f5e59b49')"
     ]
   }
 }

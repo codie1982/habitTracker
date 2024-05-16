@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="button_color">#E1E1E1</color>
+    <color name="button_select_color">#FF000000</color>
+
+    <color name="habit_color_one">#F44336</color>
+    <color name="habit_color_two">#E91E63</color>
+    <color name="habit_color_three">#9C27B0</color>
+    <color name="habit_color_four">#3F51B5</color>
+    <color name="habit_color_five">#2196F3</color>
+    <color name="habit_color_six">#03A9F4</color>
+    <color name="habit_color_seven">#00BCD4</color>
+    <color name="habit_color_eight">#009688</color>
+    <color name="habit_color_nine">#4CAF50</color>
+    <color name="habit_color_ten">#CDDC39</color>
+
 </resources>

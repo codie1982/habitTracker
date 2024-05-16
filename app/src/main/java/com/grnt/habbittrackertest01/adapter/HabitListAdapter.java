@@ -29,7 +29,7 @@ public class HabitListAdapter extends RecyclerView.Adapter<HabitListAdapter.Habi
 
     @Override
     public void onBindViewHolder(@NonNull HabitListViewHolder holder, int position) {
-            holder.txtHabitName.setText(_listHabitData.get(position).getName().toString());
+            holder.txtHabitName.setText(_listHabitData.get(position).name.toString());
     }
 
     @Override

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakeHabitFragment">
+    tools:context=".view.fragment.MakeHabitFragment">
 
     <Button
         android:id="@+id/btnClose"
@@ -14,6 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="X"
+        android:backgroundTint="@color/button_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,21 +40,70 @@
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Alışkanlık Adı"
+                android:hint="@string/habit_name_text"
+                android:drawableLeft="@drawable/_643750_draw_edit_pencil_stationary_write_icon__1_"
+                android:drawablePadding="10dp"
+                android:maxLines="1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+            <EditText
+                android:id="@+id/edtHabitDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/habit_description"
+                android:drawablePadding="10dp"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/_643750_draw_edit_pencil_stationary_write_icon__1_"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/edtHabitName" />
+            <LinearLayout
+                android:id="@+id/lytHabitTypeSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/guideline5"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@id/edtHabitDescription">
 
+                <Button
+                    android:id="@+id/btnOneHabit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button_select_color"
+                    android:text="@string/habit_type_one_button_text" />
 
+                <Button
+                    android:id="@+id/btnNegativeHabit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
+                    android:text="@string/habit_type_negative_button_text" />
+
+                <Button
+                    android:id="@+id/btnRegulareHabit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
+                    android:text="@string/habit_type_regular_button_text" />
+            </LinearLayout>
             <TextView
-                android:id="@+id/txtHabbitType"
+                android:id="@+id/txthabitTypeTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Düzenli Alışkanlık"
+                tools:text="Düzenli Alışkanlık|Olumsuz Alışkanlık|Tek Seferlik Alışkanlık"
                 app:layout_constraintEnd_toEndOf="@id/guideline5"
                 app:layout_constraintStart_toStartOf="@id/guideline4"
-                app:layout_constraintTop_toBottomOf="@id/edtHabitName" />
+                app:layout_constraintTop_toBottomOf="@id/lytHabitTypeSection" />
 
             <LinearLayout
                 android:id="@+id/sectionChoseColor"
@@ -64,13 +114,13 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="@id/guideline5"
                 app:layout_constraintStart_toStartOf="@id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/txtHabbitType">
+                app:layout_constraintTop_toBottomOf="@+id/txthabitTypeTitle">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/txtChosehabitColor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Renk Seçin"
+                    android:text="@string/chose_habit_color_text"
                     tools:layout_editor_absoluteX="48dp"
                     tools:layout_editor_absoluteY="173dp" />
 
@@ -126,7 +176,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Şu Zaman Yap"
+                android:text="Zaman Dilimi Seç : Sabah"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/lytDaysOfHabit" />
@@ -148,7 +198,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Günlük Hedef"
+                android:text="Günlük Hedef : 15 DK"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/rcTimeIntervals" />
@@ -159,26 +209,58 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="@id/guideline5"
                 app:layout_constraintStart_toStartOf="@id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/txtDailyGoal">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Hedef" />
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kapalı"
+                        android:backgroundTint="@color/black"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Süreli"
+                        android:backgroundTint="@color/black"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tekrarlı"
+                        android:backgroundTint="@color/black"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kapalı" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_chevron_right_24" />
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:backgroundTint="@color/black"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:backgroundTint="@color/black"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:backgroundTint="@color/black"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:backgroundTint="@color/black"/>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -253,12 +335,11 @@
 
                     <EditText
                         android:id="@+id/editTextText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="text"
                         android:text="Kendiniz için Bişeyler Yazın" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -283,36 +364,36 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
                     android:text="Kapalı" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
                     android:text="Tarih" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Gün" />
+                    android:backgroundTint="@color/button_color"
+                    android:text="Gün"
+                    />
             </LinearLayout>
-
-
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="24dp" />
-
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="24dp" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -324,6 +405,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="@string/sava_habit"
+        android:backgroundTint="@color/button_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
