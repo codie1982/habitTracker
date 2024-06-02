@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.adapter.HabitColorAdapter;
+import com.grnt.habbittrackertest01.adapter.HabitColorListener;
 import com.grnt.habbittrackertest01.data.HabitData;
 import com.grnt.habbittrackertest01.db.HabitDatabase;
 import com.grnt.habbittrackertest01.model.HabitType;
@@ -38,6 +39,7 @@ public class MakeHabitFragment extends Fragment {
     HabitType selectedHabitType;
 
     TextView txthabitTypeTitle;
+    HabitColorAdapter hba;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,7 +136,7 @@ public class MakeHabitFragment extends Fragment {
         habit_colors.add(R.color.habit_color_nine);
         habit_colors.add(R.color.habit_color_ten);
 
-        HabitColorAdapter hba = new HabitColorAdapter(getContext(),habit_colors );
+        hba = new HabitColorAdapter(getContext(), habit_colors, position -> hba.setSelectedPosition(position));
         rcHabitColor.setAdapter(hba);
         rcHabitColor.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }

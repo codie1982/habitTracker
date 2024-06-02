@@ -1,32 +1,25 @@
 package com.grnt.habbittrackertest01.view.fragment;
 
-import static androidx.navigation.Navigation.findNavController;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavArgument;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.grnt.habbittrackertest01.R;
-import com.grnt.habbittrackertest01.adapter.HabitListAdapter;
 import com.grnt.habbittrackertest01.adapter.RcTimeTravelsAdapter;
-import com.grnt.habbittrackertest01.data.HabitData;
+import com.grnt.habbittrackertest01.data.TimeIntervalsData;
 import com.grnt.habbittrackertest01.db.HabitDatabase;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 
 public class MainFragment extends Fragment {
@@ -59,7 +52,8 @@ Button btnAddHabit;
     }
 
     private void initRCTT() {
-        RcTimeTravelsAdapter adapter = new RcTimeTravelsAdapter();
+        List<TimeIntervalsData> timeIntervals = HabitDatabase.getInstance(getContext()).timeIntervalsDao().getTimeIntervals();
+        RcTimeTravelsAdapter adapter = new RcTimeTravelsAdapter(timeIntervals);
         rcTimeTravels.setAdapter(adapter);
         rcTimeTravels.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }

@@ -3,16 +3,21 @@ package com.grnt.habbittrackertest01.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.grnt.habbittrackertest01.R;
+import com.grnt.habbittrackertest01.data.TimeIntervalsData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RcTimeTravelsAdapter extends RecyclerView.Adapter<RcTimeTravelsAdapter.RCTTVH> {
-    public RcTimeTravelsAdapter(){
-
+    List<TimeIntervalsData> _timeIntervals;
+    public RcTimeTravelsAdapter(List<TimeIntervalsData> arTimeIntervals){
+        _timeIntervals = (arTimeIntervals);
     }
     @NonNull
     @Override
@@ -23,18 +28,18 @@ public class RcTimeTravelsAdapter extends RecyclerView.Adapter<RcTimeTravelsAdap
 
     @Override
     public void onBindViewHolder(@NonNull RCTTVH holder, int position) {
-        holder.txtTimeIntervals.setText("Deneme");
+        holder.btnTimeIntervals.setText(_timeIntervals.get(position).name);
     }
 
     @Override
     public int getItemCount() {
-        return 15;
+        return _timeIntervals.size();
     }
     class RCTTVH extends RecyclerView.ViewHolder{
-        public   TextView txtTimeIntervals;
+        public Button btnTimeIntervals;
         public RCTTVH(@NonNull View itemView) {
             super(itemView);
-            txtTimeIntervals =   itemView.findViewById(R.id.txt_time_intervals);
+            btnTimeIntervals =   itemView.findViewById(R.id.btnTimeIntervals);
         }
     }
 }

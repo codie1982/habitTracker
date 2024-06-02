@@ -28,13 +28,6 @@ public class MainActivity extends BaseActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        if(savedInstanceState == null){
-           /* getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.fragmentContainerView, MainFragment.class, null)
-                    .commit();*/
-        }
     }
 
     @Override

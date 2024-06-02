@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
@@ -17,11 +16,14 @@ import java.util.ArrayList;
 
 public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HCViewHolder> {
 
+    HabitColorListener listener;
     ArrayList<Integer> colorList;
     Context context ;
-    public HabitColorAdapter(Context context, ArrayList<Integer> colorList) {
+    int selectedPosition;
+    public HabitColorAdapter(Context context, ArrayList<Integer> colorList,HabitColorListener listener) {
         this.colorList = colorList;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -33,7 +35,17 @@ public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HC
 
     @Override
     public void onBindViewHolder(@NonNull HabitColorAdapter.HCViewHolder holder, int position) {
+        if(selectedPosition == position){
+            holder.habitColorItem.setStrokeColor(context.getColor(R.color.black));
+            holder.habitColorItem.setStrokeWidth(5);
+            holder.habitColorItem.setCardElevation(10f);
+        }else {
+            holder.habitColorItem.setStrokeColor(context.getColor(R.color.black));
+            holder.habitColorItem.setStrokeWidth(0);
+        }
+
         holder.habitColorItem.getBackground().setTint(context.getColor(colorList.get(position)));
+        holder.habitColorItem.setOnClickListener(v -> listener.onClick(position));
     }
 
     @Override
@@ -41,6 +53,10 @@ public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HC
         return this.colorList.size();
     }
 
+    public void setSelectedPosition(int position){
+        this.selectedPosition = position;
+        notifyDataSetChanged();
+    }
     class HCViewHolder extends RecyclerView.ViewHolder {
         MaterialCardView habitColorItem;
         public HCViewHolder(View view){
