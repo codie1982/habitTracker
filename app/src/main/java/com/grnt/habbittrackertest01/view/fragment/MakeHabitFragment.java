@@ -22,13 +22,14 @@ import android.widget.TextView;
 
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.adapter.HabitColorAdapter;
-import com.grnt.habbittrackertest01.adapter.HabitColorListener;
+import com.grnt.habbittrackertest01.feature.TimeIntervals.adapter.RcTimeIntervalsAdapter;
 import com.grnt.habbittrackertest01.data.HabitData;
+import com.grnt.habbittrackertest01.data.TimeIntervalsData;
 import com.grnt.habbittrackertest01.db.HabitDatabase;
 import com.grnt.habbittrackertest01.model.HabitType;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MakeHabitFragment extends Fragment {
     Button btnClose,btnSaveHabit;
@@ -40,6 +41,8 @@ public class MakeHabitFragment extends Fragment {
 
     TextView txthabitTypeTitle;
     HabitColorAdapter hba;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,19 +97,19 @@ public class MakeHabitFragment extends Fragment {
         });
         btnNegativeHabit.setOnClickListener(v-> {
             selectedHabitType = HabitType.NEGATIVE;
-            btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.button_select_color));
+            btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.active_color));
             //Unselected Buttons
-            btnOneHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
-            btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
+            btnOneHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
+            btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
             String typeText = getString(R.string.habit_type_negative_button_text);
             txthabitTypeTitle.setText(getString(R.string.habit_type_text,typeText));
         });
         btnRegularHabit.setOnClickListener(v-> {
             selectedHabitType = HabitType.REGULAR;
-            btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.button_select_color));
+            btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.active_color));
             //Unselected Buttons
-            btnOneHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
-            btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
+            btnOneHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
+            btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
 
             String typeText = getString(R.string.habit_type_regular_button_text);
             txthabitTypeTitle.setText(getString(R.string.habit_type_text,typeText));
@@ -115,10 +118,10 @@ public class MakeHabitFragment extends Fragment {
 
     void firstTypeState() {
         selectedHabitType = HabitType.ONE;
-        btnOneHabit.getBackground().setTint(getContext().getColor(R.color.button_select_color));
+        btnOneHabit.getBackground().setTint(getContext().getColor(R.color.active_color));
         //Unselected Buttons
-        btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
-        btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.button_color));
+        btnNegativeHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
+        btnRegularHabit.getBackground().setTint(getContext().getColor(R.color.passive_color));
         String typeText = getString(R.string.habit_type_one_button_text);
         txthabitTypeTitle.setText(getString(R.string.habit_type_text,typeText));
     }
@@ -140,6 +143,7 @@ public class MakeHabitFragment extends Fragment {
         rcHabitColor.setAdapter(hba);
         rcHabitColor.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }
+
 
     @Override
     public void onResume() {

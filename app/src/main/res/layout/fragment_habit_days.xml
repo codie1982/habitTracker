@@ -86,49 +86,49 @@
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_select_color"
+                android:backgroundTint="@color/active_color"
                 android:layout_marginEnd="10dp"
                 android:text="P" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="S" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="Ç" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="P" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="C" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="C" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginStart="10dp"
                 android:text="P" />
 
@@ -192,7 +192,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/button_select_color"
+                android:backgroundTint="@color/active_color"
                 android:layout_marginEnd="10dp"
                 android:text="Haftanın" />
 
@@ -200,7 +200,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="Ayın" />
 
@@ -208,7 +208,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="Yılın" />
 
@@ -223,49 +223,49 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_select_color"
+                android:backgroundTint="@color/active_color"
                 android:layout_weight="1"
                 android:text="1" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="2" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="3" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="4" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="5" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="6" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="7" />
 
@@ -281,49 +281,49 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="8" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="9" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="10" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="11" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="12" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="13" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="14" />
 
@@ -339,49 +339,49 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="15" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="16" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="17" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="18" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="19" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="20" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="21" />
 
@@ -397,49 +397,49 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="22" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="23" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="24" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="25" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="26" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="27" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_weight="1"
                 android:text="28" />
         </LinearLayout>
@@ -453,19 +453,19 @@
             <Button
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:text="29" />
 
             <Button
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:text="30" />
 
             <Button
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:text="31" />
 
 
@@ -529,49 +529,49 @@
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_select_color"
+                android:backgroundTint="@color/active_color"
                 android:layout_marginEnd="10dp"
                 android:text="1" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="2" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="3" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="4" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="5" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginHorizontal="5dp"
                 android:text="6" />
 
             <Button
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="@color/passive_color"
                 android:layout_marginStart="10dp"
                 android:text="X" />
 
@@ -588,7 +588,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="Zamanı Kaydet"
-        android:backgroundTint="@color/button_color"
+        android:backgroundTint="@color/passive_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

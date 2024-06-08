@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="X"
-        android:backgroundTint="@color/button_color"
+        android:backgroundTint="@color/passive_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_select_color"
+                    android:backgroundTint="@color/active_color"
                     android:text="@string/habit_type_one_button_text" />
 
                 <Button
@@ -84,7 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_color"
+                    android:backgroundTint="@color/passive_color"
                     android:text="@string/habit_type_negative_button_text" />
 
                 <Button
@@ -92,7 +92,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_color"
+                    android:backgroundTint="@color/passive_color"
                     android:text="@string/habit_type_regular_button_text" />
             </LinearLayout>
             <TextView
@@ -364,21 +364,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_color"
+                    android:backgroundTint="@color/passive_color"
                     android:text="Kapalı" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_color"
+                    android:backgroundTint="@color/passive_color"
                     android:text="Tarih" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/button_color"
+                    android:backgroundTint="@color/passive_color"
                     android:text="Gün"
                     />
             </LinearLayout>
@@ -405,7 +405,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="@string/sava_habit"
-        android:backgroundTint="@color/button_color"
+        android:backgroundTint="@color/passive_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

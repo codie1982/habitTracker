@@ -15,16 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.grnt.habbittrackertest01.R;
-import com.grnt.habbittrackertest01.adapter.RcTimeTravelsAdapter;
+import com.grnt.habbittrackertest01.feature.TimeIntervals.ITimeIntervalsClick;
+import com.grnt.habbittrackertest01.feature.TimeIntervals.adapter.RcTimeIntervalsAdapter;
 import com.grnt.habbittrackertest01.data.TimeIntervalsData;
 import com.grnt.habbittrackertest01.db.HabitDatabase;
 
 import java.util.List;
 
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements ITimeIntervalsClick {
 RecyclerView rcTimeTravels,rchbtlist;
 Button btnAddHabit;
+    RcTimeIntervalsAdapter adapter;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,7 @@ Button btnAddHabit;
 
     private void initRCTT() {
         List<TimeIntervalsData> timeIntervals = HabitDatabase.getInstance(getContext()).timeIntervalsDao().getTimeIntervals();
-        RcTimeTravelsAdapter adapter = new RcTimeTravelsAdapter(timeIntervals);
+        adapter = new RcTimeIntervalsAdapter(timeIntervals, this);
         rcTimeTravels.setAdapter(adapter);
         rcTimeTravels.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }
@@ -62,5 +64,10 @@ Button btnAddHabit;
         //HabitListAdapter hbtlist = new HabitListAdapter(hbDatas);
         //rchbtlist.setAdapter(hbtlist);
         //rchbtlist.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+    }
+
+    @Override
+    public void onSelected(int position) {
+        adapter.isSelected(position);
     }
 }
