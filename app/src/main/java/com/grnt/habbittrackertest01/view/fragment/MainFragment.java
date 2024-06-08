@@ -23,10 +23,10 @@ import com.grnt.habbittrackertest01.db.HabitDatabase;
 import java.util.List;
 
 
-public class MainFragment extends Fragment implements ITimeIntervalsClick {
+public class MainFragment extends Fragment {
 RecyclerView rcTimeTravels,rchbtlist;
 Button btnAddHabit;
-    RcTimeIntervalsAdapter adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,26 +48,13 @@ Button btnAddHabit;
         rchbtlist = view.findViewById(R.id.rc_habit_list);
         btnAddHabit = view.findViewById(R.id.btnAddHabit);
         btnAddHabit.setOnClickListener(v -> navController.navigate(R.id.action_mainFragment_to_habitListFragment));
-        initRCTT(); //Zaman aralıkları için gereken liste
         initHabitList();
-
     }
 
-    private void initRCTT() {
-        List<TimeIntervalsData> timeIntervals = HabitDatabase.getInstance(getContext()).timeIntervalsDao().getTimeIntervals();
-        adapter = new RcTimeIntervalsAdapter(timeIntervals, this);
-        rcTimeTravels.setAdapter(adapter);
-        rcTimeTravels.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
-    }
     private void initHabitList() {
         //List<HabitData> hbDatas = HabitDatabase.getInstance(getContext()).habitDao().getAll();
         //HabitListAdapter hbtlist = new HabitListAdapter(hbDatas);
         //rchbtlist.setAdapter(hbtlist);
         //rchbtlist.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
-    }
-
-    @Override
-    public void onSelected(int position) {
-        adapter.isSelected(position);
     }
 }

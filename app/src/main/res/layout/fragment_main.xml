@@ -359,25 +359,16 @@
             </LinearLayout>
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rc_time_intervals"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            tools:itemCount="1"
-            itemAnimator="androidx.recyclerview.widget.DefaultItemAnimator"
-            tools:listitem="@layout/rc_time_intervals_item"
-            app:layout_constraintTop_toBottomOf="@+id/lnrCalenderSection"
-            tools:layout_editor_absoluteX="1dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rc_habit_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rc_time_intervals"
-            tools:listitem="@layout/rc_habit_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_habit_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/rc_habit_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

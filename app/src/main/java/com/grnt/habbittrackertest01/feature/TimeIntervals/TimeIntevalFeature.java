@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +18,7 @@ import com.grnt.habbittrackertest01.feature.TimeIntervals.adapter.RcTimeInterval
 
 import java.util.List;
 
-public class TimeIntevalFeature extends LinearLayout implements ITimeIntervalsClick {
+public class TimeIntevalFeature extends ConstraintLayout implements ITimeIntervalsClick {
     RecyclerView rcTimeTravels;
     private RcTimeIntervalsAdapter adapter;
     public TimeIntevalFeature(Context context, @Nullable AttributeSet attrs) {
