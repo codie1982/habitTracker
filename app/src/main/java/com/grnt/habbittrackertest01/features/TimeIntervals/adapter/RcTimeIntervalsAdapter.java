@@ -1,4 +1,4 @@
-package com.grnt.habbittrackertest01.feature.TimeIntervals.adapter;
+package com.grnt.habbittrackertest01.features.TimeIntervals.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.data.TimeIntervalsData;
-import com.grnt.habbittrackertest01.feature.TimeIntervals.ITimeIntervalsClick;
+import com.grnt.habbittrackertest01.features.TimeIntervals.ITimeIntervalsClick;
 
 import java.util.List;
 

@@ -360,19 +360,17 @@
         </LinearLayout>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_habit_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timeIntervalFeatures"
         tools:listitem="@layout/rc_habit_item" />
 
-    <com.grnt.habbittrackertest01.feature.TimeIntervals.TimeIntevalFeature
+    <com.grnt.habbittrackertest01.features.TimeIntervals.TimeIntevalFeature
         android:id="@+id/timeIntervalFeatures"
         android:layout_width="match_parent"
         android:layout_height="50dp"

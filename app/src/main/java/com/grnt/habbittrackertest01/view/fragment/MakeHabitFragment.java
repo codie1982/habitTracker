@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -22,14 +21,7 @@ import android.widget.TextView;
 
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.adapter.HabitColorAdapter;
-import com.grnt.habbittrackertest01.feature.TimeIntervals.adapter.RcTimeIntervalsAdapter;
-import com.grnt.habbittrackertest01.data.HabitData;
-import com.grnt.habbittrackertest01.data.TimeIntervalsData;
-import com.grnt.habbittrackertest01.db.HabitDatabase;
 import com.grnt.habbittrackertest01.model.HabitType;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MakeHabitFragment extends Fragment {
     Button btnClose,btnSaveHabit;
@@ -59,7 +51,7 @@ public class MakeHabitFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
-        btnClose = view.findViewById(R.id.btnClose);
+/*        btnClose = view.findViewById(R.id.btnClose);
         btnSaveHabit = view.findViewById(R.id.btnSaveHabit);
         edtHabitName = view.findViewById(R.id.edtHabitName);
         edHabitDescription = view.findViewById(R.id.edtHabitDescription);
@@ -87,10 +79,10 @@ public class MakeHabitFragment extends Fragment {
         lytTargetHabit.setOnClickListener(v->navController.navigate(R.id.action_makeHabitFragment_to_habitTargetFragment));
 
         initTypeButtons();
-        initColorAdapter();
+        initColorAdapter();*/
     }
 
-    private void initTypeButtons() {
+    /*private void initTypeButtons() {
         firstTypeState();
         btnOneHabit.setOnClickListener(v-> {
             firstTypeState();
@@ -142,12 +134,12 @@ public class MakeHabitFragment extends Fragment {
         hba = new HabitColorAdapter(getContext(), habit_colors, position -> hba.setSelectedPosition(position));
         rcHabitColor.setAdapter(hba);
         rcHabitColor.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
-    }
+    }*/
 
 
     @Override
     public void onResume() {
         super.onResume();
-        firstTypeState();
+        //firstTypeState();
     }
 }

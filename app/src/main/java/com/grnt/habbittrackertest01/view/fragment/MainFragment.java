@@ -11,16 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.grnt.habbittrackertest01.R;
-import com.grnt.habbittrackertest01.feature.TimeIntervals.ITimeIntervalsClick;
-import com.grnt.habbittrackertest01.feature.TimeIntervals.adapter.RcTimeIntervalsAdapter;
-import com.grnt.habbittrackertest01.data.TimeIntervalsData;
-import com.grnt.habbittrackertest01.db.HabitDatabase;
-
-import java.util.List;
 
 
 public class MainFragment extends Fragment {
@@ -35,9 +28,7 @@ Button btnAddHabit;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-       return view;
+       return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
     @Override
