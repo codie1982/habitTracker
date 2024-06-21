@@ -359,6 +359,14 @@
             </LinearLayout>
         </LinearLayout>
 
+    <com.grnt.habbittrackertest01.features.TimeIntervals.TimeIntevalFeature
+        android:id="@+id/timeIntervalFeatures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnrCalenderSection" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_habit_list"
@@ -367,15 +375,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeIntervalFeatures"
-        tools:listitem="@layout/rc_habit_item" />
+        app:layout_constraintTop_toBottomOf="@+id/timeIntervalFeatures" />
 
-    <com.grnt.habbittrackertest01.features.TimeIntervals.TimeIntevalFeature
-        android:id="@+id/timeIntervalFeatures"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/rc_habit_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lnrCalenderSection" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@
             android:text="@string/habit_type_negative_button_text" />
 
         <Button
-            android:id="@+id/btnRegulareHabit"
+            android:id="@+id/btnRegularHabit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

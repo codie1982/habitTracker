@@ -14,11 +14,14 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.grnt.habbittrackertest01.R;
+import com.grnt.habbittrackertest01.features.textSection.TextSectionFeature;
 
 
 public class MainFragment extends Fragment {
-RecyclerView rcTimeTravels,rchbtlist;
+RecyclerView rchbtlist;
 Button btnAddHabit;
+
+TextSectionFeature textSectionFeature;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,17 +38,9 @@ Button btnAddHabit;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final NavController navController = Navigation.findNavController(view);
-        rcTimeTravels = view.findViewById(R.id.rc_time_intervals);
         rchbtlist = view.findViewById(R.id.rc_habit_list);
         btnAddHabit = view.findViewById(R.id.btnAddHabit);
         btnAddHabit.setOnClickListener(v -> navController.navigate(R.id.action_mainFragment_to_habitListFragment));
-        initHabitList();
-    }
 
-    private void initHabitList() {
-        //List<HabitData> hbDatas = HabitDatabase.getInstance(getContext()).habitDao().getAll();
-        //HabitListAdapter hbtlist = new HabitListAdapter(hbDatas);
-        //rchbtlist.setAdapter(hbtlist);
-        //rchbtlist.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
     }
 }

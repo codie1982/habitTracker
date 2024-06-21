@@ -7,9 +7,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
-
-import kotlin.jvm.internal.BooleanCompanionObject;
-
 @Dao
 public interface DatabaseSettingsDao {
     @Query("SELECT * FROM databasesettings ORDER BY uid DESC LIMIT 1")

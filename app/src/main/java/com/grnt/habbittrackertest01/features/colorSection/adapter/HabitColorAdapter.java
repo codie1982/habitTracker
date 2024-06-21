@@ -1,6 +1,7 @@
-package com.grnt.habbittrackertest01.adapter;
+package com.grnt.habbittrackertest01.features.colorSection.adapter;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,19 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.grnt.habbittrackertest01.R;
+import com.grnt.habbittrackertest01.data.HabitColorData;
+import com.grnt.habbittrackertest01.features.colorSection.listener.HabitColorListener;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HCViewHolder> {
 
     HabitColorListener listener;
-    ArrayList<Integer> colorList;
-    Context context ;
+    List<HabitColorData> colorList;
+
     int selectedPosition;
-    public HabitColorAdapter(Context context, ArrayList<Integer> colorList,HabitColorListener listener) {
+    public HabitColorAdapter(List<HabitColorData> colorList, HabitColorListener listener) {
         this.colorList = colorList;
-        this.context = context;
         this.listener = listener;
     }
 
@@ -36,15 +38,15 @@ public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HC
     @Override
     public void onBindViewHolder(@NonNull HabitColorAdapter.HCViewHolder holder, int position) {
         if(selectedPosition == position){
-            holder.habitColorItem.setStrokeColor(context.getColor(R.color.black));
+            holder.habitColorItem.setStrokeColor(Color.BLACK);
             holder.habitColorItem.setStrokeWidth(5);
             holder.habitColorItem.setCardElevation(10f);
         }else {
-            holder.habitColorItem.setStrokeColor(context.getColor(R.color.black));
+            holder.habitColorItem.setStrokeColor(Color.BLACK);
             holder.habitColorItem.setStrokeWidth(0);
         }
 
-        holder.habitColorItem.getBackground().setTint(context.getColor(colorList.get(position)));
+        holder.habitColorItem.getBackground().setTint(Color.parseColor(colorList.get(position).color));
         holder.habitColorItem.setOnClickListener(v -> listener.onClick(position));
     }
 
@@ -53,6 +55,7 @@ public class HabitColorAdapter extends RecyclerView.Adapter<HabitColorAdapter.HC
         return this.colorList.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setSelectedPosition(int position){
         this.selectedPosition = position;
         notifyDataSetChanged();

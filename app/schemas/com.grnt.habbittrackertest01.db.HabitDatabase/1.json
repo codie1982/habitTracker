@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7fd8214d43092607f42cdb36da232eea",
+    "identityHash": "7ab3a7405344724126da11b9b7413970",
     "entities": [
       {
         "tableName": "habit",
@@ -154,12 +154,38 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "habit_colors_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `hexcolor` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "color",
+            "columnName": "hexcolor",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "uid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7fd8214d43092607f42cdb36da232eea')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7ab3a7405344724126da11b9b7413970')"
     ]
   }
 }

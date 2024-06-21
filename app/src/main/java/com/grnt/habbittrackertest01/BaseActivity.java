@@ -23,6 +23,6 @@ public class BaseActivity  extends AppCompatActivity {
     }
 
     private void initApp() {
-        HabitDatabase.getInstance(this).initDatabase(this,true);
+        HabitDatabase.getInstance(this).initDatabase(this,false);
     }
 }

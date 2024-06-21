@@ -12,10 +12,12 @@ import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.data.TimeIntervalsData;
 import com.grnt.habbittrackertest01.features.TimeIntervals.ITimeIntervalsClick;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RcTimeIntervalsAdapter extends RecyclerView.Adapter<RcTimeIntervalsAdapter.RCTTVH> {
     List<TimeIntervalsData> _timeIntervals;
+    ArrayList<TimeIntervalsData> _selectedTimeIntervals = new ArrayList<>();
     int selectedPosition = -1;
     ITimeIntervalsClick timeIntervalsClick;
     boolean isSelected;
@@ -32,18 +34,17 @@ public class RcTimeIntervalsAdapter extends RecyclerView.Adapter<RcTimeIntervals
 
     @Override
     public void onBindViewHolder(@NonNull RCTTVH holder, int position) {
-        if(isSelected){
-            if(selectedPosition == position){
+        boolean isActive = false;
+        setButtonState(holder,false);
+        TimeIntervalsData tempdata = _timeIntervals.get(position);
+        for(int i=0;i<_selectedTimeIntervals.size();i++){
+            if(_selectedTimeIntervals.get(i).uid == tempdata.uid){
                 setButtonState(holder,true);
-            }else {
-                setButtonState(holder,false);
+                break;
             }
-        }else {
-            setButtonState(holder,false);
         }
-
         holder.btnTimeIntervals.setText(_timeIntervals.get(position).name);
-        holder.btnTimeIntervals.setOnClickListener(v->timeIntervalsClick.onSelected(position));
+        holder.btnTimeIntervals.setOnClickListener(v->timeIntervalsClick.onSelected(position,_timeIntervals.get(position)));
 
     }
 
@@ -51,6 +52,11 @@ public class RcTimeIntervalsAdapter extends RecyclerView.Adapter<RcTimeIntervals
     public int getItemCount() {
         return _timeIntervals.size();
     }
+
+    public ArrayList<TimeIntervalsData> getSelectedlist() {
+        return _selectedTimeIntervals;
+    }
+
     class RCTTVH extends RecyclerView.ViewHolder{
         public Button btnTimeIntervals;
         public RCTTVH(@NonNull View itemView) {
@@ -58,13 +64,23 @@ public class RcTimeIntervalsAdapter extends RecyclerView.Adapter<RcTimeIntervals
             btnTimeIntervals =   itemView.findViewById(R.id.btnTimeIntervals);
         }
     }
-    public void isSelected(int position){
-        if(selectedPosition == position){
-            isSelected=!isSelected;
-        }else {
-            isSelected = true;
+    public void setSelected(int position,TimeIntervalsData data){
+        boolean isAdd = true;
+        int selectedIndex = -1;
+        TimeIntervalsData tempData = _timeIntervals.get(position);
+        for(int i=0;i<_selectedTimeIntervals.size();i++){
+            if(_selectedTimeIntervals.get(i).uid == tempData.uid){
+                isAdd = false;
+                selectedIndex = i;
+                break;
+            }
         }
-        selectedPosition = position;
+
+        if(isAdd){
+            _selectedTimeIntervals.add(data);
+        }else{
+            _selectedTimeIntervals.remove(selectedIndex);
+        }
         notifyDataSetChanged();
     }
 

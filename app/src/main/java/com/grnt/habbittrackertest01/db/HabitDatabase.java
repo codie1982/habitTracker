@@ -1,6 +1,8 @@
 package com.grnt.habbittrackertest01.db;
 
+
 import android.content.Context;
+import android.graphics.Color;
 
 import androidx.room.Database;
 import androidx.room.Room;
@@ -9,19 +11,21 @@ import androidx.room.RoomDatabase;
 import com.grnt.habbittrackertest01.R;
 import com.grnt.habbittrackertest01.data.DatabaseSettingsDao;
 import com.grnt.habbittrackertest01.data.DatabaseSettingsData;
+import com.grnt.habbittrackertest01.data.HabitColorDao;
+import com.grnt.habbittrackertest01.data.HabitColorData;
 import com.grnt.habbittrackertest01.data.HabitDao;
 import com.grnt.habbittrackertest01.data.HabitData;
 import com.grnt.habbittrackertest01.data.TimeIntervalsDao;
 import com.grnt.habbittrackertest01.data.TimeIntervalsData;
-import com.grnt.habbittrackertest01.view.fragment.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-@Database(entities = {HabitData.class, TimeIntervalsData.class, DatabaseSettingsData.class}, version = 1)
+@Database(entities = {HabitData.class, TimeIntervalsData.class, DatabaseSettingsData.class, HabitColorData.class}, version = 1)
 public abstract class HabitDatabase extends RoomDatabase {
 
     public abstract HabitDao habitDao();
     public abstract TimeIntervalsDao timeIntervalsDao();
+    public abstract HabitColorDao habitColorDao();
     public abstract DatabaseSettingsDao dbSettingsDao();
     private static volatile HabitDatabase INSTANCE;
     public static HabitDatabase getInstance(Context context){
@@ -39,11 +43,13 @@ public abstract class HabitDatabase extends RoomDatabase {
     public void initDatabase(Context context,Boolean isRestart) {
         if(isRestart){
             timeIntervalsDao().clearAllData();
+            habitColorDao().clearAllData();
             dbSettingsDao().updateDatabaseSetup(false);
         }
         DatabaseSettingsData _ds =dbSettingsDao().getDBSetup();
 
         if(_ds == null || _ds.isSetup == null || _ds.isSetup == false){
+            //Habit Intervals
             List<TimeIntervalsData> _ls = new ArrayList<>();
             TimeIntervalsData _dtMorning = new TimeIntervalsData();
             _dtMorning.name = context.getString(R.string.morning);
@@ -78,6 +84,26 @@ public abstract class HabitDatabase extends RoomDatabase {
             _ls.add(_dtNight);
             _ls.forEach(x->timeIntervalsDao().insertTimeIntervals(x));
 
+            //Habit Color
+            ArrayList<Integer> _habit_colors = new ArrayList<>();
+            _habit_colors.add(R.color.habit_color_one);
+            _habit_colors.add(R.color.habit_color_two);
+            _habit_colors.add(R.color.habit_color_three);
+            _habit_colors.add(R.color.habit_color_four);
+            _habit_colors.add(R.color.habit_color_five);
+            _habit_colors.add(R.color.habit_color_six);
+            _habit_colors.add(R.color.habit_color_seven);
+            _habit_colors.add(R.color.habit_color_eight);
+            _habit_colors.add(R.color.habit_color_nine);
+            _habit_colors.add(R.color.habit_color_ten);
+
+            _habit_colors.forEach(x->{
+                HabitColorData _hc = new HabitColorData();
+                _hc.color = context.getString(x);
+                habitColorDao().insertHabitColor(_hc);
+            });
+
+            //DB SETUP
             DatabaseSettingsData  nds = new DatabaseSettingsData();
             nds.isSetup = true;
             dbSettingsDao().insertDatabaseSetup(nds);

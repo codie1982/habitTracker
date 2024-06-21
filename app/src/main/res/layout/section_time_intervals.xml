@@ -10,13 +10,14 @@
         android:id="@+id/txtTimeTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="Zaman Dilimi Seç : Sabah"
         tools:text="Zaman Dilimi Seç : Sabah"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rc_time_intervals" />
+        app:layout_constraintTop_toBottomOf="@+id/rcTimeIntervals" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_time_intervals"
+        android:id="@+id/rcTimeIntervals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
